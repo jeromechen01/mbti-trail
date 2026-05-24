@@ -1,0 +1,75 @@
+# ============================================================
+# .gitignore — GitHub 仓库要排除的文件
+# 原则：只把"用户浏览器需要的静态文件"放上去；
+#       内部文档、工具、Worker 代码、配置都不传公网。
+# ============================================================
+
+# ===== Node / 前端工具产物 =====
+node_modules/
+dist/
+build/
+.cache/
+*.log
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== 系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 临时 =====
+*.tmp
+*.bak
+~$*
+
+# ===== 敏感配置 =====
+.env
+.env.local
+secrets.json
+deepseek-key.txt
+
+# ===== 客户数据 =====
+exports/
+backups/
+
+# ===== Claude 配置 =====
+.claude/
+CLAUDE.md
+
+# ===== 内部产品文档（不传公网，留本地） =====
+# 编号开头的内部规划文档
+01-*.md
+02-*.md
+03-*.md
+04-*.md
+05-*.md
+06-*.md
+07-*.md
+14-*.md
+
+# 内部进度/决策/最终交付报告
+FINAL-REPORT.md
+PROGRESS.md
+DECISIONS.md
+P1-完成报告.md
+
+# P2/P3 升级提示词目录（包含全部内部规划）
+P2-P3/
+
+# docs 整个目录（包含操作手册、P2/P3 完成报告等内部文档）
+docs/
+
+# ===== 客服 / 测试工具（仅本地用，绝不上传公网） =====
+# admin.html 暴露解锁码生成算法，必须本地用
+admin.html
+# verify-test.html 是内部自检工具
+verify-test.html
+
+# ===== Cloudflare Worker 代码（不是浏览器静态资源） =====
+# worker.js 是部署到 Cloudflare 的代码，不放 GitHub Pages
+worker.js
